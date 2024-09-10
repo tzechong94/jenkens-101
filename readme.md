@@ -67,3 +67,22 @@ docker inspect <container_id> | grep IPAddress
 ```
 docker pull devopsjourney1/myjenkinsagents:python
 ```
+
+
+## Notes
+
+docker exec -it jenkins-blueocean bash
+
+- this goes into jenkins server and runs bash.
+- cd to workspace to view jobs
+- ls -ltr to list
+
+nodes -> permanent agent -> linux or windows server that is always available, jenkins connect to it via ssh and distributes jobs to it. but older way of creating agent. people are now configuring cloud
+
+- workaround for socat
+- start up a container to proxy from jenkins master container to localhost instead of connecting to a cloud instance of docker
+
+labels are used for master to use to determine which agent should run the build
+
+- instance capacity: how many agents it's gonna spawn
+- remote file system root: /home/jenkins
